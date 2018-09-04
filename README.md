@@ -18,3 +18,5 @@ FishMorphology.txt: Fish morphometric data, with three additional variables, dat
 R SCRIPTS:
 
 Coming soon...
+
+PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at michael.greenacre@gmail.com
