@@ -24,6 +24,6 @@ FishMorphology.txt: Fish morphometric data, with three additional variables, dat
 
 R SCRIPTS:
 
-Coming soon...
+easyCODA_script.R: file of all the R commands in Appendix C
 
 PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at michael.greenacre@gmail.com
