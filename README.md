@@ -8,7 +8,7 @@ The package is still under development and the latest version can always be foun
 
   install.packages("easyCODA", repos="http://R-Forge.R-project.org")
 
-(the latest version is 0.26, with a few bug fixes).
+(the latest version is 0.28, with a few important bug fixes, especially to the function STEP, so please reinstall this version until the latest version is on CRAN).
 
 The package does include the data sets, but the data files are given here as well in Excel or character format.
 
@@ -24,6 +24,6 @@ FishMorphology.txt: Fish morphometric data, with three additional variables, dat
 
 R SCRIPTS:
 
-easyCODA_script.R: file of all the R commands in Appendix C
+easyCODA_script.R: file of all the R commands in Appendix C, also with some slight corrections.
 
 PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at michael.greenacre@gmail.com
