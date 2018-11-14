@@ -271,7 +271,7 @@ STEP(cups)$names
 # compute amalgamations
 amalgs <- matrix(0, nrow(cups), ncol=0.5*ncol(cups)*(ncol(cups)-1))
 colnames(amalgs) <- 1:ncol(amalgs)
-cupnames <- colnames[cups]
+cupnames <- colnames(cups)
 k <- 1
 for(jj in 2:ncol(cups)) {
   for(j in 1:(jj-1)) {
