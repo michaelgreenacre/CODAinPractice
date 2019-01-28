@@ -3,12 +3,12 @@ COMPOSITIONAL DATA ANALYSIS IN PRACTICE
 
 This repository contains data files and R scripts for the book Compositional Data Analysis in Practice (Michael Greenacre, Chapman & Hall / CRC Press, 2018).
 
-The easyCODA R package accompanies the book and is available on CRAN, version 0.25.
+The easyCODA R package accompanies the book and is available on CRAN, version 0.28.
 The package is still under development and the latest version can always be found on R-Forge, installing as follows from R:
 
   install.packages("easyCODA", repos="http://R-Forge.R-project.org")
 
-(the latest version is 0.28, with a few important bug fixes, especially to the function STEP, so please reinstall this version until the latest version is on CRAN).
+(the latest version is 0.31, with a few important bug fixes, especially to the function STEP, so please reinstall this version until the latest version is on CRAN).
 
 The package does include the data sets, but the data files are given here as well in Excel or character format.
 
@@ -27,3 +27,7 @@ R SCRIPTS:
 easyCODA_script.R: file of all the R commands in Appendix C, also with some slight corrections.
 
 PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at michael.greenacre@gmail.com
+
+ERRATA:
+
+CDAiP_typos.rtf: For the readers of my book, there is a provisional list of errors that I and others have found since its publication.
