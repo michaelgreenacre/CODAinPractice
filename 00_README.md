@@ -14,6 +14,7 @@ The package is still under development and the latest version can always be foun
 
 The package does include the data sets, but the data files are given here as well in Excel or character format.
 
+
 DATA SETS:
 
 Vegetables.txt: Vegetables data set, data object 'veg' in easyCODA
@@ -24,11 +25,15 @@ RomanCups.xls:  Archaeometric data on Roman glass cups, data object 'cups' in ea
 
 FishMorphology.txt: Fish morphometric data, with three additional variables, data object 'fish' in easyCODA 
 
+
 R SCRIPTS:
 
 easyCODA_script.R: file of all the R commands in Appendix C, also with some slight corrections.
 
 PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at michael.greenacre@gmail.com
+
+invSLR: first version (with minimal error checking of inputs) of an inverse function for SLRs (amalgamated logratios)
+
 
 ERRATA:
 
