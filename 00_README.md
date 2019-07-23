@@ -5,14 +5,20 @@ This repository contains data files and R scripts for the book Compositional Dat
 
   https://www.crcpress.com/Compositional-Data-Analysis-in-Practice/Greenacre/p/book/9781138316430
 
-The easyCODA R package accompanies the book and is available on CRAN, version 0.31.
+as well as some other files related to articles on compositional data analysis.
+
+The easyCODA R package accompanies the book and is available on CRAN, presently version 0.31.
 The package is still under development and the latest version can always be found on R-Forge, installing as follows from R:
 
   install.packages("easyCODA", repos="http://R-Forge.R-project.org")
 
-(the latest version is 0.31, with a few important bug fixes, especially to the function STEP, so please reinstall this version if you have an earlier one).
+(the latest version 0.31 has a few important bug fixes, especially to the function STEP, so please reinstall this version if you have an earlier one).
 
 The package does include the data sets, but the data files are given here as well in Excel or character format.
+
+ERRATA in "Compositional Data Analysis in Practice":
+
+CDAiP_typos.rtf: For the readers of my book, there is a provisional list of errors that I and others have found since its publication.
 
 
 DATA SETS:
@@ -34,7 +40,5 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 invSLR: first version (with minimal error checking of inputs) of an inverse function for SLRs (amalgamated logratios)
 
+CAGEOscript.R: script related to the article "A comparison of amalgamation and isometric logratios in compositional data analysis", by Michael Greenacre, Eric Grunsky and John Bacon-Shone
 
-ERRATA:
-
-CDAiP_typos.rtf: For the readers of my book, there is a provisional list of errors that I and others have found since its publication.
