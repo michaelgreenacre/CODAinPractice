@@ -182,6 +182,9 @@ PLOT.LRA(time.LRA, map="contribution", rescale=0.5,
 # summary function from ca package
 summary(time.LRA)
 
+# LRA with amalgamation specified
+LRA(time, amalg = list(nowork=c(4:6)))
+
 # compute logratios of Vegetables data and perform unweighted PCA
 veg.LR <- LR(veg)
 veg.PCA <- PCA(veg.LR$LR, weight = FALSE)
