@@ -16,9 +16,12 @@ The package is still under development and the latest version can always be foun
 
 The package does include the data sets, but the data files are given here as well in Excel or character format.
 
+
 ERRATA in "Compositional Data Analysis in Practice":
 
-CDAiP_typos.rtf: For the readers of my book, there is a provisional list of errors that I and others have found since its publication.
+CDAiP_typos.pdf: For the readers of my book, there is a provisional list of errors that I and others have found since its publication.
+
+CDAiP_typos.rtf: rich text format of the above
 
 
 DATA SETS:
