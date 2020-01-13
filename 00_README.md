@@ -43,5 +43,5 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 invSLR: first version (with minimal error checking of inputs) of an inverse function for SLRs (amalgamated logratios)
 
-CAGEOscript.R: script related to the article "A comparison of amalgamation and isometric logratios in compositional data analysis", by Michael Greenacre, Eric Grunsky and John Bacon-Shone
+CAGEOscript.R: script related to the article "A comparison of amalgamation logratio balances and isometric logratio balances in compositional data analysis", by Michael Greenacre, Eric Grunsky and John Bacon-Shone
 
