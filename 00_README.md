@@ -41,7 +41,7 @@ easyCODA_script.R: file of all the R commands in Appendix C, also with some slig
 
 PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at michael.greenacre@gmail.com
 
-invSLR: first version (with minimal error checking of inputs) of an inverse function for SLRs (amalgamated logratios)
+invSLR: first version (with minimal error checking of inputs) of an inverse function for SLRs (amalgamated logratios) -- this function is now incorporated into easyCODA along with the error-checking
 
 CAGEOscript.R: script related to the article "A comparison of amalgamation logratio balances and isometric logratio balances in compositional data analysis", by Michael Greenacre, Eric Grunsky and John Bacon-Shone
 
