@@ -43,5 +43,8 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 invSLR: first version (with minimal error checking of inputs) of an inverse function for SLR balances (logratios of amalgamated parts) -- this function is now incorporated into easyCODA along with the error-checking
 
-CAGEOscript.R: script related to the article "A comparison of amalgamation logratio balances and isometric logratio balances in compositional data analysis", by Michael Greenacre, Eric Grunsky and John Bacon-Shone
+CAGEOscript.R: script related to the article "A comparison of amalgamation logratio balances and isometric logratio balances in compositional data analysis", by Michael Greenacre, Eric Grunsky and John Bacon-Shone, Computers and Geosciences (2020)
 
+SLRscript.R: script related to article " Amalgamations are valid in compositional data analysis, can be used in agglomerative clustering, and their logratios have an inverse transformation", by Michael Greenacre, Applied Computing and Geosciences (2020)
+
+amphipod_ratios.R: script related to the article "The selection and analysis of fatty acid ratios: A new approach for the univariate and multivariate analysis of fatty acid trophic markers in marine pelagic organisms", by Martin Graeve and Michael Greenacre, Limnology & Oceanography Methods (202)
