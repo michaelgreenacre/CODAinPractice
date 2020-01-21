@@ -52,3 +52,7 @@ SLRscript.R: script related to article " Amalgamations are valid in compositiona
 amphipod_ratios.R: script related to the article "The selection and analysis of fatty acid ratios: A new approach for the univariate and multivariate analysis of fatty acid trophic markers in marine pelagic organisms", by Martin Graeve and Michael Greenacre, Limnology & Oceanography Methods (2020)
 
 amphipods.csv: data set for R script above
+
+copepod_ratios.R: script related to the article "The selection and analysis of fatty acid ratios: A new approach for the univariate and multivariate analysis of fatty acid trophic markers in marine pelagic organisms", by Martin Graeve and Michael Greenacre, Limnology & Oceanography Methods (2020)
+
+copepods.csv: data set for R script above
