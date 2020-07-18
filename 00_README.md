@@ -56,3 +56,9 @@ amphipods.csv: data set for R script above
 copepod_ratios.R: script related to the article "The selection and analysis of fatty acid ratios: A new approach for the univariate and multivariate analysis of fatty acid trophic markers in marine pelagic organisms", by Martin Graeve and Michael Greenacre, Limnology & Oceanography Methods (2020)
 
 copepods.csv: data set for R script above
+
+ANNUALREVIEWSscript.R
+
+copepods.csv: data set for R script abvoe (same data set as for Graeve & Greenacre (2020)
+
+microbiome.csv: microbiome data set for R script above. From Baxter et al. (2016)
