@@ -57,7 +57,8 @@ copepod_ratios.R: script related to the article "The selection and analysis of f
 
 copepods.csv: data set for R script above
 
-ANNUALREVIEWSscript.R
+
+ANNUALREVIEWSscript.R: R script for 'Compositional Data Analysis' (Greenacre 2020, Annual Reviews in Statistics and its Application)
 
 copepods_TL.csv: data set for R script abvoe (same data set as for Graeve & Greenacre (2020), with added variable Total Lipids (TL))
 
