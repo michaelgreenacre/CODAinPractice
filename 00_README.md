@@ -61,4 +61,6 @@ ANNUALREVIEWSscript.R
 
 copepods.csv: data set for R script abvoe (same data set as for Graeve & Greenacre (2020)
 
-microbiome.csv: microbiome data set for R script above. From Baxter et al. (2016)
+Baxter_OTU_table.txt: microbiome data set for R script above. From Baxter et al. (2016)
+
+Baxter_metadata.txt: metadata that goes with the OTU table. From Baxter et al. (2016)
