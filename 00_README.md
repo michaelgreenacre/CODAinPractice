@@ -59,7 +59,7 @@ copepods.csv: data set for R script above
 
 ANNUALREVIEWSscript.R
 
-copepods.csv: data set for R script abvoe (same data set as for Graeve & Greenacre (2020)
+copepods_TL.csv: data set for R script abvoe (same data set as for Graeve & Greenacre (2020), with added variable Total Lipids (TL))
 
 Baxter_OTU_table.txt: microbiome data set for R script above. From Baxter et al. (2016)
 
