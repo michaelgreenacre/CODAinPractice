@@ -7,7 +7,7 @@ This repository contains data files and R scripts for the book Compositional Dat
 
 as well as some other files related to articles on compositional data analysis.
 
-The easyCODA R package accompanies the book and is available on CRAN, presently version 0.31.
+The easyCODA R package accompanies the book and is available on CRAN, presently version 0.34.
 The package is still under development and the latest version can always be found on R-Forge, installing as follows from R:
 
   install.packages("easyCODA", repos="http://R-Forge.R-project.org")
