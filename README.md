@@ -65,3 +65,7 @@ copepods_TL.csv: data set for R script abvoe (same data set as for Graeve & Gree
 Baxter_OTU_table.txt: microbiome data set for R script above. From Baxter et al. (2016)
 
 Baxter_metadata.txt: metadata that goes with the OTU table. From Baxter et al. (2016)
+
+Two zip files, supplementary material for the article "Making the most of expert knowledge to analyse archaeologicaldata: a case study on Parthian and Sasanian glazed pottery" (Jonathan Wood and Michael Greenacre 2021, Archaeological and Anthropological Sciences)
+Wood&Greenacre_CSV FILES: data files 
+Wood&Greenacre_CODE&FUNCIONS: R code and additional R functions
