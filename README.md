@@ -92,6 +92,8 @@ Frontiers_ALR.R: script for Greenacre et al. (2021)
 
 Frontiers_ALR_supplementary.R: script for supplementary material of Greenacre et al. (2021)
 
+FINDALR.R: function FINDALR to identify optimal ALR reference, without or with weights
+
 Baxter_OTU_table.txt: microbiome data set (Baxter et al., 2016), used in supplementary material of Greenacre et al. (2021)
 
 Baxter_metadata.txt: metadata of above data set (Baxter et al., 2016), used in supplementary material of Greenacre et al. (2021)
