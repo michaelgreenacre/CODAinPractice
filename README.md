@@ -24,7 +24,7 @@ CDAiP_typos.pdf: For the readers of my book, there is a provisional list of erro
 CDAiP_typos.rtf: rich text format of the above
 
 
-DATA SETS:
+DATA SETS for Compositional Data Analysis in Practice:
 
 Vegetables.txt: Vegetables data set, data object 'veg' in easyCODA
 
@@ -35,7 +35,7 @@ RomanCups.xls:  Archaeometric data on Roman glass cups, data object 'cups' in ea
 FishMorphology.txt: Fish morphometric data, with three additional variables, data object 'fish' in easyCODA 
 
 
-R SCRIPTS:
+R SCRIPTS for Compositional Data Analysis in Practice:
 
 easyCODA_script.R: file of all the R commands in Appendix C, also with some slight corrections.
 
@@ -45,11 +45,19 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 R scripts and data sets from other publications
 
-CAGEOscript.R: script related to the article "A comparison of amalgamation logratio balances and isometric logratio balances in compositional data analysis", by Michael Greenacre, Eric Grunsky and John Bacon-Shone, Computers and Geosciences (2020)
+ARTICLE: "A comparison of amalgamation logratio balances and isometric logratio balances in compositional data analysis", by Michael Greenacre, Eric Grunsky and John Bacon-Shone, Computers and Geosciences (2020)
 
-SLRscript.R: script related to article " Amalgamations are valid in compositional data analysis, can be used in agglomerative clustering, and their logratios have an inverse transformation", by Michael Greenacre, Applied Computing and Geosciences (2020)
+CAGEOscript.R: script related Greenacre, Grunsky & Bacon-Shone (2020) 
 
-amphipod_ratios.R: script related to the article "The selection and analysis of fatty acid ratios: A new approach for the univariate and multivariate analysis of fatty acid trophic markers in marine pelagic organisms", by Martin Graeve and Michael Greenacre, Limnology & Oceanography Methods (2020)
+
+ARTICLE: "Amalgamations are valid in compositional data analysis, can be used in agglomerative clustering, and their logratios have an inverse transformation", by Michael Greenacre, Applied Computing and Geosciences (2020)
+
+SLRscript.R: script related to article 
+
+
+ARTICLE: "The selection and analysis of fatty acid ratios: A new approach for the univariate and multivariate analysis of fatty acid trophic markers in marine pelagic organisms", by Martin Graeve and Michael Greenacre, Limnology & Oceanography Methods (2020)
+
+amphipod_ratios.R: script related to the article by Graeve & Greenacre (2020)
 
 amphipods.csv: data set for R script above
 
@@ -58,16 +66,34 @@ copepod_ratios.R: script related to the article "The selection and analysis of f
 copepods.csv: data set for R script above
 
 
-ANNUALREVIEWSscript.R: R script for 'Compositional Data Analysis' (Greenacre 2020, Annual Reviews in Statistics and its Application)
+ARTICLE: "Compositional Data Analysis", by Michael Greenacre, Annual Reviews in Statistics and its Application (2021)
 
-copepods_TL.csv: data set for R script abvoe (same data set as for Graeve & Greenacre (2020), with added variable Total Lipids (TL))
+ANNUALREVIEWSscript.R: R script for  article by Greenacre (2021)
+
+copepods_TL.csv: data set for R script above (same data set as for Graeve & Greenacre (2020), with added variable Total Lipids (TL))
 
 Baxter_OTU_table.txt: microbiome data set for R script above. From Baxter et al. (2016)
 
 Baxter_metadata.txt: metadata that goes with the OTU table. From Baxter et al. (2016)
 
-Supplementary material for the article "Making the most of expert knowledge to analyse archaeologicaldata: a case study on Parthian and Sasanian glazed pottery" (Jonathan Wood and Michael Greenacre 2021, Archaeological and Anthropological Sciences). Two zip files:
 
-Wood&Greenacre_CSV FILES: data files 
+ARTICLE: "Making the most of expert knowledge to analyse archaeologicaldata: a case study on Parthian and Sasanian glazed pottery", by Jonathan Wood and Michael Greenacre, Archaeological and Anthropological Sciences (2021)
+
+Supplementary material for the article by Wood & Greenacre (2021). Two zip files:
+
+Wood&Greenacre_CSV: data files 
 
 Wood&Greenacre_CODE&FUNCIONS: R code and additional R functions
+
+
+ARTICLE: "Additive logratio transformation validated]{Compositional data analysis of microbiome and any-omics datasets: a validation of the additive logratio transformation", by Michael Greenacre, Marina Martinez-Alvaro and Agustin Blasco, Frontiers in Microbiology (2021)
+
+Frontiers_ALR.R: script for Greenacre et al. (2021)
+
+Frontiers_ALR_supplementary.R: script for supplementary material of Greenacre et al. (2021)
+
+Baxter_OTU_table.txt: microbiome data set (Baxter et al., 2016), used in supplementary material of Greenacre et al. (2021)
+
+Baxter_metadata.txt: metadata of above data set (Baxter et al., 2016), used in supplementary material of Greenacre et al. (2021)
+
+Deng_vaginal_microbiome.txt: Vaginal microbiome data (Deng et al., 2018), cited by Wu et al. (2021)
