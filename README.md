@@ -83,7 +83,7 @@ Supplementary material for the article by Wood & Greenacre (2021). Two zip files
 
 Wood&Greenacre_CSV: data files 
 
-Wood&Greenacre_CODE&FUNCIONS: R code and additional R functions
+Wood&Greenacre_CODE&FUNCTIONS: R code and additional R functions
 
 
 ARTICLE: "Additive logratio transformation validated]{Compositional data analysis of microbiome and any-omics datasets: a validation of the additive logratio transformation", by Michael Greenacre, Marina Martinez-Alvaro and Agustin Blasco, Frontiers in Microbiology (2021)
