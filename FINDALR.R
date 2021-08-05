@@ -11,7 +11,7 @@ FINDALR <- function(data, weight = FALSE) {
   if(sum(data[1,]!=1)) data <- data/rowSums(data)
   
   ### first compute the exact logratio geometry
-  data.lra <- LRA(data, weight=weight, row.wt=row.wt)
+  data.lra <- LRA(data, weight=weight)
   data.lra.rpc <- data.lra$rowpcoord 
   tot.var <- sum(data.lra$sv^2)
   
@@ -29,8 +29,9 @@ FINDALR <- function(data, weight = FALSE) {
     }
     if(weight) {
       c <- colMeans(data)
-      foo <- sweep(alr$LR, 2, c)
-      alr.svd <- svd(sqrt(1/nrow(alr$LR)) * sweep(alr$LR, 2, colMeans(alr$LR)) * sqrt(c))
+      cc <- c*c[j]
+      cc <- cc[-j]
+      alr.svd <- svd(sqrt(1/nrow(alr$LR)) * sweep(alr$LR, 2, colMeans(alr$LR)) %*%  diag(sqrt(cc)))
       alr.rpc <- sqrt(nrow(alr$LR)) * alr.svd$u %*% diag(alr.svd$d)
     }
     procrust.cor[j] <- protest(alr.rpc[,1:dim],data.lra.rpc, permutations=0)$t0
