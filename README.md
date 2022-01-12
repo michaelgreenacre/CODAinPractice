@@ -99,3 +99,9 @@ Baxter_OTU_table.txt: microbiome data set (Baxter et al., 2016), used in supplem
 Baxter_metadata.txt: metadata of above data set (Baxter et al., 2016), used in supplementary material of Greenacre et al. (2021)
 
 Deng_vaginal_microbiome.txt: Vaginal microbiome data (Deng et al., 2018), cited by Wu et al. (2021)
+
+ARTICLE: "....", by Michael Greenacre, Eric Grunsky, John Bacon-Shone, Ionas Erb and Thomas Quinn (2022)
+
+StatSci_Appendix.R: script for reproducing the analysis of the Tellus geochemical data set
+
+tellus.xrf.a.cation.txt: Tellus cation data set
