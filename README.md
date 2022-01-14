@@ -1,6 +1,6 @@
 # CODAinPractice
 
-**COMPOSITIONAL DATA ANALYSIS IN PRACTICE**
+## **COMPOSITIONAL DATA ANALYSIS IN PRACTICE**
 
 This repository contains data files and R scripts for the book ***Compositional Data Analysis in Practice*** (Michael Greenacre, Chapman & Hall / CRC Press, 2018):
 
@@ -43,7 +43,7 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 -----------------------------------------------------------------------------------------------------------
 
-# **R scripts and data sets from other publications**
+## **R scripts and data sets from other publications**
 
   \
 **ARTICLE**: ***"A comparison of amalgamation logratio balances and isometric logratio balances in compositional data analysis"***, by Michael Greenacre, Eric Grunsky and John Bacon-Shone, Computers and Geosciences (2020)
