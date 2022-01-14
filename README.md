@@ -13,8 +13,6 @@ The package is still under development and the latest version can always be foun
 
   install.packages("easyCODA", repos="http://R-Forge.R-project.org")
 
-(the latest version 0.31 has a few important bug fixes, especially to the function STEP, so please reinstall this version if you have an earlier one).
-
 The package does include the data sets, but the data files are given here as well in Excel or character format.
 
   \
