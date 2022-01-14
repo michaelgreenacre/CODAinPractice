@@ -104,7 +104,7 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 **Deng_vaginal_microbiome.txt**: Vaginal microbiome data (Deng et al., 2018), cited by Wu et al. (2021)
 
   \
-**ARTICLE:** ***"Three approaches to supervised learning for compositional data with pairwise logratios"***, by Germà Coenders and Michael Greenacre
+**ARTICLE:** ***"Three approaches to supervised learning for compositional data with pairwise logratios"***, by Germà Coenders and Michael Greenacre (2022)
 
 **Coenders&Greenacre_CODE.R**: R code for analysis of Crohn data (Crohn data available in R package selbal, as shown in code)
 
