@@ -40,7 +40,6 @@ The package does include the data sets, but the data files are given here as wel
 
 PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at michael.greenacre@gmail.com
 
-  \
 -----------------------------------------------------------------------------------------------------------
 
 **R scripts and data sets from other publications**
