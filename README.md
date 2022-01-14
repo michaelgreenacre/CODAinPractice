@@ -7,6 +7,7 @@ This repository contains data files and R scripts for the book Compositional Dat
 
 as well as some other files related to articles on compositional data analysis.
 
+  \
 The easyCODA R package accompanies the book and is available on CRAN, presently version 0.34.
 The package is still under development and the latest version can always be found on R-Forge, installing as follows from R:
 
@@ -16,14 +17,14 @@ The package is still under development and the latest version can always be foun
 
 The package does include the data sets, but the data files are given here as well in Excel or character format.
 
-
+  \
 ERRATA in "Compositional Data Analysis in Practice":
 
 CDAiP_typos.pdf: For the readers of my book, there is a provisional list of errors that I and others have found since its publication.
 
 CDAiP_typos.rtf: rich text format of the above
 
-
+  \
 DATA SETS for Compositional Data Analysis in Practice:
 
 Vegetables.txt: Vegetables data set, data object 'veg' in easyCODA
@@ -34,27 +35,29 @@ RomanCups.xls:  Archaeometric data on Roman glass cups, data object 'cups' in ea
 
 FishMorphology.txt: Fish morphometric data, with three additional variables, data object 'fish' in easyCODA 
 
-
+  \
 R SCRIPTS for Compositional Data Analysis in Practice:
 
 easyCODA_script.R: file of all the R commands in Appendix C, also with some slight corrections.
 
 PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at michael.greenacre@gmail.com
 
+  \
 -----------------------------------------------------------------------------------------------------------
 
 R scripts and data sets from other publications
 
+  \
 ARTICLE: "A comparison of amalgamation logratio balances and isometric logratio balances in compositional data analysis", by Michael Greenacre, Eric Grunsky and John Bacon-Shone, Computers and Geosciences (2020)
 
 CAGEOscript.R: script related Greenacre, Grunsky & Bacon-Shone (2020) 
 
-
+  \
 ARTICLE: "Amalgamations are valid in compositional data analysis, can be used in agglomerative clustering, and their logratios have an inverse transformation", by Michael Greenacre, Applied Computing and Geosciences (2020)
 
 SLRscript.R: script related to article 
 
-
+  \
 ARTICLE: "The selection and analysis of fatty acid ratios: A new approach for the univariate and multivariate analysis of fatty acid trophic markers in marine pelagic organisms", by Martin Graeve and Michael Greenacre, Limnology & Oceanography Methods (2020)
 
 amphipod_ratios.R: script related to the article by Graeve & Greenacre (2020)
@@ -65,7 +68,7 @@ copepod_ratios.R: script related to the article "The selection and analysis of f
 
 copepods.csv: data set for R script above
 
-
+  \
 ARTICLE: "Compositional Data Analysis", by Michael Greenacre, Annual Reviews in Statistics and its Application (2021)
 
 ANNUALREVIEWSscript.R: R script for  article by Greenacre (2021)
@@ -76,7 +79,7 @@ Baxter_OTU_table.txt: microbiome data set for R script above. From Baxter et al.
 
 Baxter_metadata.txt: metadata that goes with the OTU table. From Baxter et al. (2016)
 
-
+  \
 ARTICLE: "Making the most of expert knowledge to analyse archaeologicaldata: a case study on Parthian and Sasanian glazed pottery", by Jonathan Wood and Michael Greenacre, Archaeological and Anthropological Sciences (2021)
 
 Supplementary material for the article by Wood & Greenacre (2021). Two zip files:
@@ -85,7 +88,7 @@ Wood&Greenacre_CSV: data files
 
 Wood&Greenacre_CODE&FUNCTIONS: R code and additional R functions
 
-
+  \
 ARTICLE: "Additive logratio transformation validated]{Compositional data analysis of microbiome and any-omics datasets: a validation of the additive logratio transformation", by Michael Greenacre, Marina Martinez-Alvaro and Agustin Blasco, Frontiers in Microbiology (2021)
 
 Frontiers_ALR.R: script for Greenacre et al. (2021)
@@ -101,13 +104,13 @@ Baxter_metadata.txt: metadata of above data set (Baxter et al., 2016), used in s
 Deng_vaginal_microbiome.txt: Vaginal microbiome data (Deng et al., 2018), cited by Wu et al. (2021)
 
   \
-ARTICLE: "Three approaches to supervised learning for compositional data with pairwise logratios", by Germà Coenders and Michael Greenacre
+**ARTICLE:** ***"Three approaches to supervised learning for compositional data with pairwise logratios"***, by Germà Coenders and Michael Greenacre
 
-Coenders&Greenacre_CODE.R: R code for analysis of Crohn data (Crohn data available in R package selbal, as shown in code)
+**Coenders&Greenacre_CODE.R**: R code for analysis of Crohn data (Crohn data available in R package selbal, as shown in code)
 
   \
-ARTICLE: "Aitchison's Compositional Data Analysis 40 Years On: A Reappraisal", by Michael Greenacre, Eric Grunsky, John Bacon-Shone, Ionas Erb and Thomas Quinn (2022)
+**ARTICLE:** ***"Aitchison's Compositional Data Analysis 40 Years On: A Reappraisal"***, by Michael Greenacre, Eric Grunsky, John Bacon-Shone, Ionas Erb and Thomas Quinn (2022)
 
-StatSci_Appendix.R: script for reproducing the analysis of the Tellus geochemical data set
+**StatSci_Appendix.R**: script for reproducing the analysis of the Tellus geochemical data set
 
-tellus.xrf.a.cation.txt: Tellus cation data set
+**tellus.xrf.a.cation.txt**: Tellus cation data set
