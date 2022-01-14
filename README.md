@@ -100,12 +100,12 @@ Baxter_metadata.txt: metadata of above data set (Baxter et al., 2016), used in s
 
 Deng_vaginal_microbiome.txt: Vaginal microbiome data (Deng et al., 2018), cited by Wu et al. (2021)
 
-
+  \
 ARTICLE: "Three approaches to supervised learning for compositional data with pairwise logratios", by Germà Coenders and Michael Greenacre
 
 Coenders&Greenacre_CODE.R: R code for analysis of Crohn data (Crohn data available in R package selbal, as shown in code)
 
-
+  \
 ARTICLE: "Aitchison's Compositional Data Analysis 40 Years On: A Reappraisal", by Michael Greenacre, Eric Grunsky, John Bacon-Shone, Ionas Erb and Thomas Quinn (2022)
 
 StatSci_Appendix.R: script for reproducing the analysis of the Tellus geochemical data set
