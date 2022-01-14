@@ -175,31 +175,30 @@ BIC(glm(as.factor(y) ~ Crohn.step3$logratios, family="binomial"))
 # [1] 967.4286
 
 ### -------------------------------------------------------------------------------------------------------
-### Method 3 again, with Roseburia in denominator
-### (overwrites Crohn.step3, this is the ALR we want)
+### Method 3 again, with Roseburia forced to be reference
 
-Crohn.step3 <- STEPR(Crohn.no0.pro, y, method=3, family="binomial", denom=32)
+Crohn.step3.Rose <- STEPR(Crohn.no0.pro, y, method=3, family="binomial", denom=32)
 # [1] "Criterion increases when 10-th ratio enters"
-summary(glm(as.factor(y) ~ Crohn.step3$logratios, family="binomial"))
+summary(glm(as.factor(y) ~ Crohn.step3.Rose$logratios, family="binomial"))
 # Coefficients:
-#                                                                Estimate Std. Error z value Pr(>|z|)    
-# (Intercept)                                                     3.72618    0.46039   8.094 5.80e-16 ***
-# Crohn.step3$logratiosg__Streptococcus/g__Roseburia              0.14147    0.04378   3.232 0.001231 **
-# Crohn.step3$logratiosg__Dialister/g__Roseburia                  0.14069    0.02624   5.362 8.25e-08 ***
-# Crohn.step3$logratiosf__Peptostreptococcaceae_g__/g__Roseburia -0.20652    0.03238  -6.377 1.81e-10 ***
-# Crohn.step3$logratioso__Lactobacillales_g__/g__Roseburia        0.14197    0.03965   3.581 0.000342 ***
-# Crohn.step3$logratiosg__Bacteroides/g__Roseburia               -0.27915    0.04810  -5.804 6.49e-09 ***
-# Crohn.step3$logratiosg__Dorea/g__Roseburia                      0.20213    0.04393   4.601 4.20e-06 ***
-# Crohn.step3$logratiosg__Adlercreutzia/g__Roseburia              0.15111    0.03600   4.197 2.70e-05 ***
-# Crohn.step3$logratiosg__Aggregatibacter/g__Roseburia            0.13782    0.03284   4.196 2.71e-05 ***
-# Crohn.step3$logratiosg__Prevotella/g__Roseburia                -0.09203    0.02581  -3.565 0.000363 ***
+#                                                                     Estimate Std. Error z value Pr(>|z|)    
+# (Intercept)                                                          3.72618    0.46039   8.094 5.80e-16 ***
+# Crohn.step3.Rose$logratiosg__Streptococcus/g__Roseburia              0.14147    0.04378   3.232 0.001231 **
+# Crohn.step3.Rose$logratiosg__Dialister/g__Roseburia                  0.14069    0.02624   5.362 8.25e-08 ***
+# Crohn.step3.Rose$logratiosf__Peptostreptococcaceae_g__/g__Roseburia -0.20652    0.03238  -6.377 1.81e-10 ***
+# Crohn.step3.Rose$logratioso__Lactobacillales_g__/g__Roseburia        0.14197    0.03965   3.581 0.000342 ***
+# Crohn.step3.Rose$logratiosg__Bacteroides/g__Roseburia               -0.27915    0.04810  -5.804 6.49e-09 ***
+# Crohn.step3.Rose$logratiosg__Dorea/g__Roseburia                      0.20213    0.04393   4.601 4.20e-06 ***
+# Crohn.step3.Rose$logratiosg__Adlercreutzia/g__Roseburia              0.15111    0.03600   4.197 2.70e-05 ***
+# Crohn.step3.Rose$logratiosg__Aggregatibacter/g__Roseburia            0.13782    0.03284   4.196 2.71e-05 ***
+# Crohn.step3.Rose$logratiosg__Prevotella/g__Roseburia                -0.09203    0.02581  -3.565 0.000363 ***
 # ---
 
 # Null deviance: 1223.9  on 974  degrees of freedom
 # Residual deviance:  898.6  on 965  degrees of freedom
 # AIC: 918.6
 
-BIC(glm(as.factor(y) ~ Crohn.step3$logratios, family="binomial"))
+BIC(glm(as.factor(y) ~ Crohn.step3.Rose$logratios, family="binomial"))
 # [1] 967.4286
 
 ### -------------------------------------------------------------------------------------------------------
@@ -255,10 +254,10 @@ summary(glm(as.factor(y) ~ ., family="binomial", data=foo))
 
 ### -------------------------------------------------------------------------------------------------------
 ### Method 3 with Egge (9th part) entering at Step 9 - have to specify Rose as denominator
-### (use the step3 analysis where Rose was the denominator reference)
+### (use the Crohn.step3.Rose analysis where Rose was the denominator reference)
 ### Again ask for top 10 at step 9
 Crohn.step3b <- STEPR(Crohn.no0.pro, y, nsteps=1, top=10, method=3, family="binomial",
-                      previous=Crohn.step3$logratios[,1:8], denom=32)
+                      previous=Crohn.step3.Rose$logratios[,1:8], denom=32)
 Crohn.step3b$deviance.top
 #  [1] 898.6042 903.3561 904.4669 904.4930 905.2139 905.8167 906.1235 906.6195 906.7808 906.8320
 
@@ -279,7 +278,7 @@ Crohn.step3b$ratios.top
 # g__Faecalibacterium/g__Roseburia   10  32
 
 ### do GLM with 8 logratios (w.r.t. Rose) and Egge/Rose as the 9th
-foo <- as.data.frame(list(previous=Crohn.step3$logratios[,1:8], Egge_Rose=Crohn.step3b$logratios.top[,2]))  
+foo <- as.data.frame(list(previous=Crohn.step3.Rose$logratios[,1:8], Egge_Rose=Crohn.step3b$logratios.top[,2]))  
 summary(glm(as.factor(y) ~ ., family="binomial", data=foo))
 # Coefficients:
 #                                                    Estimate Std. Error z value Pr(>|z|)    
@@ -305,7 +304,7 @@ BIC(glm(as.factor(y) ~ ., family="binomial", data=foo))
 ### -------------------------------------------------------------------------------------------------------
 ### Method 3 moving on with Egge/Rose included in previous, always with Rose in denominator
 ### Just ask for 3 steps more
-previous <- as.data.frame(list(first8=Crohn.step3$logratios[,1:8], Egge_Rose=Crohn.step3b$logratios.top[,2]))
+previous <- as.data.frame(list(first8=Crohn.step3.Rose$logratios[,1:8], Egge_Rose=Crohn.step3b$logratios.top[,2]))
 Crohn.step3c <- STEPR(Crohn.no0.pro, y, nsteps=3, top=1, method=3, family="binomial", criterion=NA,
                       previous=previous, denom=32)
 Crohn.step3c$BIC
@@ -317,7 +316,7 @@ Crohn.step3c$ratios
 # g__Bilophila/g__Roseburia   48  32
 
 ### Do GLM with original first 8 logratios, then Egge/Rose and finally the first 2 steps above
-foo <- as.data.frame(list(previous=Crohn.step3$logratios[,1:8], Egge_Rose=Crohn.step3b$logratios.top[,2], Crohn.step3c$logratios[,1:2]))  
+foo <- as.data.frame(list(previous=Crohn.step3.Rose$logratios[,1:8], Egge_Rose=Crohn.step3b$logratios.top[,2], Crohn.step3c$logratios[,1:2]))  
 summary(glm(as.factor(y) ~ ., family="binomial", data=foo))
 # Coefficients:
 #                                                    Estimate Std. Error z value Pr(>|z|)    
