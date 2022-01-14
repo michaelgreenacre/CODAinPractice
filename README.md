@@ -89,7 +89,7 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 **Wood&Greenacre_CODE&FUNCTIONS**: R code and additional R functions
 
   \
-**ARTICLE**: ***"Additive logratio transformation validated]{Compositional data analysis of microbiome and any-omics datasets: a validation of the additive logratio transformation"***, by Michael Greenacre, Marina Martinez-Alvaro and Agustin Blasco, Frontiers in Microbiology (2021)
+**ARTICLE**: ***"Compositional data analysis of microbiome and any-omics datasets: a validation of the additive logratio transformation"***, by Michael Greenacre, Marina Martinez-Alvaro and Agustin Blasco, Frontiers in Microbiology (2021)
 
 **Frontiers_ALR.R**: script for Greenacre et al. (2021)
 
