@@ -111,6 +111,6 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
   \
 **ARTICLE:** ***"Aitchison's Compositional Data Analysis 40 Years On: A Reappraisal"***, by Michael Greenacre, Eric Grunsky, John Bacon-Shone, Ionas Erb and Thomas Quinn (2022)
 
-**StatSci_Appendix.R**: script for reproducing the analysis of the Tellus geochemical data set
+**tellus_Appendix.R**: script for reproducing the analysis of the Tellus geochemical data set
 
 **tellus.xrf.a.cation.txt**: Tellus cation data set
