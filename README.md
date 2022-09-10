@@ -109,8 +109,14 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 **STEPR.R**: function for stepwise selection of logratios for GLM models (this function is in the pre-release of easyCODA on RForge)
 
   \
-**ARTICLE:** ***"Aitchison's Compositional Data Analysis 40 Years On: A Reappraisal"***, by Michael Greenacre, Eric Grunsky, John Bacon-Shone, Ionas Erb and Thomas Quinn (2022)
+**ARTICLE:** ***"Aitchison's Compositional Data Analysis 40 Years On: A Reappraisal"***, by Michael Greenacre, Eric Grunsky, John Bacon-Shone, Ionas Erb and Thomas Quinn (2022). There are two versions: the original Version 1, and the new revised Version 2
 
-**tellus_Appendix.R**: script for reproducing the analysis of the Tellus geochemical data set
+**tellus_Appendix.R**: script for reproducing the analysis of the Tellus geochemical data set in Appendix of Version 1
+
+**tellus_CoDA_script.R**: script for reproducing the analysis of the Tellus geochemical data set in Version 2 (essentially the same as before)
 
 **tellus.xrf.a.cation.txt**: Tellus cation data set
+
+**singlecell_CoDA_script.R**: script for reproducing the analysis of the single cell genetic data set in Version 2
+
+**SingleCell.RData**: R workspace containing all the data files for the single cell application in Section 6 of Version 2
