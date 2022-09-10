@@ -127,12 +127,9 @@ for(j in seq(4,44,4)) {
 # find the subcompositional parts  
     jparts <- sample(1:6147, nparts)
     foo.pro <- CLOSE(genes.pro[,jparts])
-# remove parts all zeros
-#    allzero <- which(colSums(foo.pro)==0)
-#    if(length(allzero)>0) {
-#      jparts <- jparts[-allzero]
-#      foo.pro <- CLOSE(genes.pro[,jparts])
-#    }
+# remove samples all zeros
+    allzero <- which(rowSums(foo.pro)==0)
+    if(length(allzero)>0) foo.pro <- foo.pro[-allzero,]
     genes.foo.cpc <- CA(foo.pro)$colpcoord
     genes.CA.coherence [i,k] <- protest(genes.CA.cpc[jparts,], genes.foo.cpc, permutations=0)$t0
   }
@@ -172,10 +169,16 @@ for(j in 1:9) {
   nparts <- round(6147*j/10)
   for(k in 1:100) {
     foo <- M[myind,sample(1:6147, nparts)]
+# remove samples all zeros
+    allzero <- which(rowSums(foo)==0)
+    if(length(allzero)>0) foo <- foo[-allzero,]
 ### 20% sample in subcomposition
     subsample <- sample(1:nparts, round(nparts/5))
     foo.sub <- foo[,subsample]
-    foo <- CLOSE(foo)
+# remove samples all zeros
+    allzero <- which(rowSums(foo.sub)==0)
+    if(length(allzero)>0) foo.sub <- foo.sub[-allzero,] 
+    foo.pro <- CLOSE(foo)
     foo.sub <- CLOSE(foo.sub)
     foo.cpc <- CA(foo)$colpcoord[subsample,]
     foo.sub.cpc <- CA(foo.sub)$colpcoord
