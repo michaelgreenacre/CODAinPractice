@@ -126,6 +126,6 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 **kimberlite.cation.txt**: kimberlite cation data (Grunsky and Kjarsgaard, 2008)
 
-The distributable code for this article is in preparation.
+The distributable R code for this article is in preparation.
 
 
