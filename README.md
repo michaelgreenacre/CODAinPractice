@@ -115,6 +115,12 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 **tellus_CoDA_script.R**: script for reproducing the analysis of the Tellus geochemical data set in Version 2 (essentially the same as before)
 
+**tellus.xrf.a.cation.txt**: Tellus cation data set
+
+**singlecell_CoDA_script.R**: script for reproducing the analysis of the single cell genetic data set in Version 2
+
+**SingleCell.RData**: R workspace containing all the data files for the single cell application in Section 6 of Version 2
+
   \
   **ARTICLE:** ***"GeoCoDA: Recognizing and Validating Structural Processes in Geochemical Data. A Workflow on Compositional Data Analysis in Lithogeochemistry"***, by Eric Grunsky, Michael Greenacre, and Bruce Kjarsgaard (2023). 
 
@@ -122,8 +128,4 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 The distributable code for this article is in preparation.
 
-**tellus.xrf.a.cation.txt**: Tellus cation data set
 
-**singlecell_CoDA_script.R**: script for reproducing the analysis of the single cell genetic data set in Version 2
-
-**SingleCell.RData**: R workspace containing all the data files for the single cell application in Section 6 of Version 2
