@@ -115,6 +115,13 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 **tellus_CoDA_script.R**: script for reproducing the analysis of the Tellus geochemical data set in Version 2 (essentially the same as before)
 
+  \
+  **ARTICLE:** ***"GeoCoDA: Recognizing and Validating Structural Processes in Geochemical Data. A Workflow on Compositional Data Analysis in Lithogeochemistry"***, by Eric Grunsky, Michael Greenacre, and Bruce Kjarsgaard (2023). 
+
+**kimberlite.cation.txt**: kimberlite cation data (Grunsky and Kjarsgaard, 2008)
+
+The distributable code for this article is in preparation.
+
 **tellus.xrf.a.cation.txt**: Tellus cation data set
 
 **singlecell_CoDA_script.R**: script for reproducing the analysis of the single cell genetic data set in Version 2
