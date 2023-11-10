@@ -95,7 +95,7 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 **FINDALR.R**: function FINDALR to identify optimal ALR reference, without or with weights
 
-**Rabbits.xlsx**: Rabbits data set (89 rows, 3957 columns), rabbits x microbial genes. The different case ID label style refers to the two laboratories that did the testing
+**Rabbits.xlsx**: Rabbits data set (89 rows, 3937 columns), rabbits x microbial genes. The different case ID label style refers to the two laboratories that did the testing
 
 **Baxter_OTU_table.txt**: microbiome data set (Baxter et al., 2016), used in supplementary material of Greenacre et al. (2021)
 
