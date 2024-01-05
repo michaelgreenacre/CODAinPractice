@@ -128,6 +128,6 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 **kimberlite.cation.txt**: kimberlite cation data (Grunsky and Kjarsgaard, 2008)
 
-The distributable R code for this article is in preparation.
+**GeoCoDA_script.R**: script for reproducing the GeoCoDA workflow
 
 
