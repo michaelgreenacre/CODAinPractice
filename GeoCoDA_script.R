@@ -3,7 +3,7 @@
 ### using setwd() function or pull-down menu
 	
 ### Read the data
-kim270 <- read.table("kimberlite.cation.txt", header=T)
+kim270 <- read.table("kimberlite270.cation.closed.txt", header=T)
 dim(kim270)
 # [1] 270  24
 colnames(kim270)
