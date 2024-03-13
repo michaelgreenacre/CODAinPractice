@@ -594,7 +594,7 @@ eJF.STEPR$names
 #  one is chosen randomly) 
 eJF.STEPR$Bonferroni
 # [1] 117.3022 100.0730 102.2857
-eJF.MgLa.MgV <- glm(factor(eJF.Rest) ~ kim.LR$LR[,"Mg/La"] + kim.LR$LR[,"Mg/V"], family="binomial")
+eJF.MgLa.MgV <- glm(factor(eJF) ~ kim.LR$LR[,"Mg/La"] + kim.LR$LR[,"Mg/V"], family="binomial")
 summary(eJF.MgLa.MgV)
 # Coefficients:
 #                      Estimate Std. Error z value Pr(>|z|)    
@@ -602,7 +602,7 @@ summary(eJF.MgLa.MgV)
 # kim.LR$LR[, "Mg/La"]   14.016      2.579   5.436 5.46e-08 ***
 # kim.LR$LR[, "Mg/V"]    13.146      3.271   4.019 5.85e-05 ***
 eJF.MgLa.MgV.pred <- predict(eJF.MgLa.MgV)
-table(eJF.MgLa.MgV.pred>0, factor(eJF.Rest))
+table(eJF.MgLa.MgV.pred>0, factor(eJF))
 #           0   1
 #   FALSE 107   9
 #   TRUE    9 145
