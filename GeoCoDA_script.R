@@ -1,7 +1,19 @@
 ### ------------------- KIMBERLITE DATA ------------------------
 ### First set the working directory to where the data file is
 ### using setwd() function or pull-down menu
-	
+
+### Packages required in this script
+require(ape)
+require(RColorBrewer)
+require(easyCODA)
+require(Ternary)
+require(ellipse)
+require(rpart)
+require(nnet)	
+require(easyCODA)
+### (note that if functions STEPR() and FINDR() are not found, they are available on the GitHub site
+###  for copying and pasting into your session)
+
 ### Read the data
 kim270 <- read.table("kimberlite270.cation.closed.txt", header=T)
 dim(kim270)
@@ -513,7 +525,9 @@ CIplot_biv(kim.rpc[,1], kim.rpc[,2], group=kim.su, groupcols=kim.su.col,
 ### ----------------------------------------------------
 ### Principal component analysis (PCA) of ALRs w.r.t. Zr
 ### First identify Zr as being the best reference element
-### (most isometric) for an additive logratio transform
+### (closest to isometric) for an additive logratio transform
+### If function FINDR() is not detected, it is available on the GitHub site
+###  for copying and pasting into your session.
 FINDALR(kim, weight=FALSE)
 # $totvar
 # [1] 0.1132472
@@ -577,7 +591,9 @@ CIplot_biv(-kim.alr.rpc[,1], -kim.alr.rpc[,2], group=kim.su, groupcols=kim.su.co
 
 ### ------------------------------------------------------------
 ### Supervised analysis predicting eJF using logistic regression
-### with default Bonferroni stopping criterion
+###   with default Bonferroni stopping criterion
+### If function STEPR() is not detected, it is available on the GitHub site
+###   for copying and pasting into your session.
 eJF <- rep(0, nrow(kim))
 eJF[kim270$StratUnit == "eJF"] <- 1
 table(eJF)
@@ -590,8 +606,8 @@ eJF.STEPR <- STEPR(kim, as.factor(eJF), method=1, family="binomial")
 eJF.STEPR$names
 [1] "Mg/La" "Mg/V" 
 # (note: if you get "Mg/La" "V/La", this is equivalent to the above,
-#  there is a tie between "Mg/V" and "V/La" for the second ratio and
-#  one is chosen randomly) 
+#  there is a tie between "Mg/V" and "V/La" so the solution is the same,
+#  i.e., identical log-contrast) 
 eJF.STEPR$Bonferroni
 # [1] 117.3022 100.0730 102.2857
 eJF.MgLa.MgV <- glm(factor(eJF) ~ kim.LR$LR[,"Mg/La"] + kim.LR$LR[,"Mg/V"], family="binomial")
