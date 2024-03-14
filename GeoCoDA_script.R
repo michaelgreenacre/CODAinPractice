@@ -523,8 +523,8 @@ FINDALR(kim, weight=FALSE)
 # [21] 0.9769708 0.95452000
 # $procrust.max
 # [1] 0.9772571
-$procrust.ref
-[1] 12
+# $procrust.ref
+# [1] 12
 # $var.log
 #  [1] 0.003046547 0.061977127 0.079009722 0.004858624 0.006784848 0.227910235 0.852322165 0.606497843
 #  [9] 0.149071830 0.494010137 0.119399769 0.095607494 0.144020770 0.042618539 0.016720746 0.017030990
@@ -624,9 +624,9 @@ summary(eJF.MgLa.NiV)
 # (we will use Ni/V rather than V/Ni for the plot to ensure both coefficients are positive)
 eJF.MgLa.NiV.pred <- predict(eJF.MgLa.NiV)
 table(eJF.MgLa.NiV.pred>0, factor(eJF))
-        0   1
-  FALSE 108   9
-  TRUE    8 145
+#         0   1
+#   FALSE 108   9
+#   TRUE    8 145
 (108+145)/270
 # [1] 0.937037
 
@@ -690,6 +690,7 @@ require(rpart)
 eJF.tree <- rpart(factor(eJF) ~ ., data=as.data.frame(kim.LR$LR))
 plot(eJF.tree, mar=0.1)
 text(eJF.tree, use.n=TRUE)
+kim.ratios <- as.data.frame(exp(LR(kim)$LR))
 eJF.tree <- rpart(factor(eJF) ~ ., data=as.data.frame(kim.ratios))
 plot(eJF.tree, mar=0.1)
 text(eJF.tree, use.n=TRUE)
@@ -729,24 +730,29 @@ require(nnet)
 ### Uses Bonferroni as stopping criterion with nmumber of 
 ### parameters m = 4 x the estimated parameters in one equation
 ### Bonferroni = (AIC - 2m = -2 log Likelihood) + 9.23 * m
-multlogit <- rep(0, 231)
+multlogit <- rep(999, 231)
 names(multlogit) <- colnames(kim.LR$LR) 
+### Step1 of multinomial logit
+### Find best logratio predictor amongst all pairwise logratios
 for(jk in 1:231){
   test <- multinom(factor(kim270$StratUnit) ~ kim.LR$LR[,jk])
   multlogit[jk] <- AIC(test)
 }
 which(multlogit == min(multlogit))
-# Si/Zr 
+# Si/Zr  (is best logratio)
 #    11
 step1 <- multinom(factor(kim270$StratUnit) ~ kim.LR$LR[,"Si/Zr"])
 summary(step1)
 # AIC: 332.1833 
+### Bonferroni computation, using chi-square value of 9.23
+### (see Coenders & Greenacre (2022)
 332.1833 - 2*8 + 9.23*8
 # [1] 390.0233
 sum(diag(table(predict(step1), kim270$StratUnit)))/270
 # [1] 0.7740741
 
-# step2
+### Step2 of multinomial logit
+### Put best logratio in model and find second best amongst the remaining ones
 multlogit <- rep(999, 231)
 names(multlogit) <- colnames(kim.LR$LR) 
 for(jk in (1:231)[-11]){
@@ -754,18 +760,21 @@ for(jk in (1:231)[-11]){
   multlogit[jk] <- AIC(test)
 }
 which(multlogit == min(multlogit))
-# P/Rb 
+# P/Rb   (second best logratio)
 #  141 
 step2 <- multinom(factor(kim270$StratUnit) ~ kim.LR$LR[,"Si/Zr"]+ kim.LR$LR[,"P/Rb"])
 summary(step2)
 # AIC: 174.704 
+### Bonferroni computation, using chi-square value of 9.23
+### (see Coenders & Greenacre (2022)
 174.704 - 2*12 + 9.23*12
 # [1] 261.464
 sum(diag(table(predict(step2), kim270$StratUnit)))/270
 table(predict(step2), kim270$StratUnit)[kim.su.order,kim.su.order]
 # [1] 0.8962963
 
-# step3
+### Step3 of multinomial logit
+### Put best two logratios in model and find second best amongst the remaining ones
 multlogit <- rep(999, 231)
 names(multlogit) <- colnames(kim.LR$LR) 
 for(jk in (1:231)[-c(11,141)]){
@@ -773,17 +782,20 @@ for(jk in (1:231)[-c(11,141)]){
   multlogit[jk] <- AIC(test)
 }
 which(multlogit == min(multlogit))
-# Si/Ni
+# Si/Ni    (is third best)
 #  16 
 step3 <- multinom(factor(kim270$StratUnit) ~ kim.LR$LR[,"Si/Zr"]+kim.LR$LR[,"P/Rb"]+kim.LR$LR[,"Si/Ni"])
 summary(step3)
 # AIC: 148.5424
+### Bonferroni computation, using chi-square value of 9.23
+### (see Coenders & Greenacre (2022)
 148-54.704 - 2*16 + 9.23*16
 # [1] 208.976
 sum(diag(table(predict(step3), kim270$StratUnit)))/270
 # [1] 0.9296296
 
-# step4
+### Step4 of multinomial logit
+### Put best 3 logratios in model and find second best amongst the remaining ones
 multlogit <- rep(999, 231)
 names(multlogit) <- colnames(kim.LR$LR) 
 for(jk in (1:231)[-c(11,16,141)]){
@@ -811,11 +823,13 @@ Pense    61.84604             7.927122            1.813085             7.938223 
 
 Residual Deviance: 90.83202   # 90.832++8.166*16 = 221.488
 AIC: 130.832 
-
+### Bonferroni computation, using chi-square value of 9.23
+### (see Coenders & Greenacre (2022)
 130.83 - 2*20 + 9.23*20
 # [1] 275.43
 
-### hence, stop after three terms
+### hence, stop after three terms since Bonferroni is increasing at 4th step
+
 summary(step3)
 Coefficients:
       (Intercept) kim.LR$LR[, "Si/Zr"] kim.LR$LR[, "P/Rb"] kim.LR$LR[, "Si/Ni"]
@@ -839,7 +853,6 @@ AIC: 148.5424
 ### Classification tree on pairwise ratios (not logratios) predicting
 ### all five phases
 require(rpart)
-kim.ratios <- as.data.frame(exp(LR(kim)$LR))
 kim.tree <- rpart(factor(kim270$StratUnit) ~ ., data=kim.ratios)
 ### Figure 14 classification tree using pairwise ratios
 ### The labelling has been enhanced afterwards
@@ -885,6 +898,8 @@ table(cv.pred.phase, kim270$StratUnit)[kim.su.order,kim.su.order]
 sum(diag(table(cv.pred.phase, kim270$StratUnit)))/nrow(kim)
 # 37 mispredictions, 233 correct ones 
 # [1] 0.862963
+
+
 
 
 
