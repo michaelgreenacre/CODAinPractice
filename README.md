@@ -131,9 +131,9 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 **GeoCoDA_script.R**: script for reproducing the GeoCoDA workflow
 
  \
-  **ARTICLE:** ***"GeoCoDA: Recognizing and Validating Structural Processes in Geochemical Data. A Workflow on Compositional Data Analysis in Lithogeochemistry"***, by Eric Grunsky, Michael Greenacre, and Bruce Kjarsgaard (2023). 
+  **ARTICLE:** ***"A Comprehensive Workflow for Compositional Data Analysis in Archaeometry, with code in R"***, by Michael Greenacre and Jonathan Wood (2024). 
 
-**kimberlite.cation.closed.txt**: kimberlite cation data (Grunsky and Kjarsgaard, 2008), samples closed to sum to 100%
+**BRONZE_v1.RData**: dataset of Chines ritual bronzes
 
-**GeoCoDA_script.R**: script for reproducing the GeoCoDA workflow
+**bronze_script.R**: script for reproducing the workflow
  
