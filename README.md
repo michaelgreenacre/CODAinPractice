@@ -130,4 +130,10 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 **GeoCoDA_script.R**: script for reproducing the GeoCoDA workflow
 
+ \
+  **ARTICLE:** ***"GeoCoDA: Recognizing and Validating Structural Processes in Geochemical Data. A Workflow on Compositional Data Analysis in Lithogeochemistry"***, by Eric Grunsky, Michael Greenacre, and Bruce Kjarsgaard (2023). 
 
+**kimberlite.cation.closed.txt**: kimberlite cation data (Grunsky and Kjarsgaard, 2008), samples closed to sum to 100%
+
+**GeoCoDA_script.R**: script for reproducing the GeoCoDA workflow
+ 
