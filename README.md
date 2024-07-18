@@ -133,7 +133,7 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
  \
   **ARTICLE:** ***"A Comprehensive Workflow for Compositional Data Analysis in Archaeometry, with code in R"***, by Michael Greenacre and Jonathan Wood (2024). 
 
-**Shang_West_East.csv**: dataset of Chines ritual bronzes
+**Bronze.csv**: dataset of Chines ritual bronzes
 
 **Bronze_script.R**: script for reproducing the workflow
  
