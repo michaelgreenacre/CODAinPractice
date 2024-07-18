@@ -1,3 +1,5 @@
+### This script was run using R version 4.4.1 and easyCODA version 0.40.1
+### There might be small differences where random numbers are generated
 ### packages required
 require(RColorBrewer)
 require(easyCODA)
@@ -10,7 +12,7 @@ require(splitstackshape)
 require(randomForest)
 
 ### read data from all three dynasties
-BRONZE <- read.csv("Shang_West_East.csv", header=TRUE)
+BRONZE <- read.csv("Bronze.csv", header=TRUE)
 dim(BRONZE)
 # [1] 362  12
 head(BRONZE)
@@ -383,7 +385,7 @@ set.seed(123)
 CIplot_biv(bronze.rpc[,1], bronze.rpc[,2],group=bronze.kmeans6$cluster, groupcols=rep("gray40",6),
            alpha=0.99, add=TRUE, shade=FALSE, shownames=FALSE)
  
-### check log(Pb/Zn), log(Zn/Sb) and log(Pb/Sb) means for the three clusters 1,3,4
+### check log(Pb/Zn), log(Cu/Sb) and log(Pb/Sb) means for the three clusters 1,3,4
 PbZn <- log(bronze[,"Pb"]/bronze[,"Zn"])
 aggregate(PbZn ~factor(bronze.kmeans6$cluster), FUN=mean)
 #   factor(bronze.kmeans6$cluster)     PbZn
