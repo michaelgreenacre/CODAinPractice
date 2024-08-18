@@ -62,28 +62,38 @@ element.col <- rev(c(brewer.pal(8,"Dark2")[1:6], "yellow2",brewer.pal(8,"Dark2")
 bronze.pro.cum     <- t(apply(cbind(rep(0,nrow(bronze)), bronze.pro[,element.order]), 1, cumsum)) 
 
 ### Figure 2 (pull out window so it is wide and flat, adjusting accordingly)
-par(mar=c(4,1,2,1), mgp=c(2,0.7,0), font.lab=2, cex.lab=0.9, las=1)
-plot(0,0,xlab="Percentage (%)",ylab="",xlim=c(-3,100),ylim=c(-35,366), yaxt="n", bty="n", main="Bronze data (all elements)", type="n")
+### NOTE: The following window size defintion is for Windows users in R
+###       Mac/OS users should open a window with these dimensions
+### windows(width=10, height=4.7)
+par(mar=c(4,1,2,0.5), mgp=c(2,0.7,0), font.lab=2, cex.lab=0.8, las=1)
+plot(0,0,xlab="Percentage (%)",ylab="",xlim=c(-3,100),ylim=c(-40,nrow(bronze.pro)+3*35), yaxt="n", bty="n", main="Bronze data (all elements)", type="n")
 nlines <- nrow(bronze)+2
-i.extra <- 0
+i.extra <- 15
+i.skip  <- 5
 ii <- 1
+foo <- cumsum(c(0,100*colMeans(bronze.pro[,element.order])))
 for(igp in 1:3) {
+  ii <- ii+i.extra/2 + i.skip
+  foo <- cumsum(c(0,100*colMeans(bronze.pro[group.num==igp,element.order])))
+  for(j in 1:ncol(bronze)) segments(foo[j], ii, foo[j+1], ii, col=element.col[j],lwd=8, lend=1)
+  text(0,ii, labels="Average", cex=0.7, font=4, col=group.col[c(2,1,3)[igp]], pos=2)
+  ii <- ii + i.extra
   for(i in group.ends[igp,1]:group.ends[igp,2]) {
     foo <- 100*bronze.pro.cum[i,]
     for(j in 1:ncol(bronze)) segments(foo[j], ii, foo[j+1], ii, col=element.col[j],lwd=3,lend=1)
     ii <- ii+1
   }
-  i.extra <- i.extra+1
-  if(igp!=3) segments(0, ii+i.extra, 100, ii+i.extra, col="white",lwd=4, lend=1)
-  ii <- ii+i.extra+1
+  ii <- ii + i.skip
 }
+text(c(0,0,0),c(92,269,440) , labels=group.names, col=group.col[c(2,1,3)],pos=2, font=2, cex=0.8)
 foo <- cumsum(c(0,100*colMeans(bronze.pro[,element.order])))
 for(j in 1:ncol(bronze)) segments(foo[j], -15, foo[j+1], -15, col=element.col[j],lwd=8, lend=1)
-text(c(0,0,0,0,0),c(55,181,318) , labels=group.names, col=group.col[c(2,1,3)],pos=2, font=2, cex=0.8)
-text(0, -15, labels="Average", cex=0.8, font=3, pos=2)
+text(0, -15, labels="Average", cex=0.7, font=4, pos=2)
+text(0, -35, labels="(all)    ", cex=0.7, font=3, pos=2)
 ### just label top three elements
 labels.mid <- foo[6:8] + (foo[7:9] - foo[6:8])/2
-text(labels.mid, -30, labels=colnames(bronze)[element.order][6:8], col=element.col[6:8], cex=0.8, font=4)
+text(labels.mid, -36, labels=colnames(bronze)[element.order][6:8], col=element.col[6:8], cex=0.8, font=4)
+
 
 ### plot the 5 small percentages separately
 ### get subcomposition (first 5 in element.order) and cumulative sums
@@ -91,30 +101,35 @@ bronze.sub.pro <- CLOSE(bronze.pro[,element.order][,1:5])
 element.sub.order <- order(colMeans(bronze.sub.pro))
 bronze.sub.pro.cum     <- t(apply(cbind(rep(0,nrow(bronze)), bronze.sub.pro[,element.sub.order]), 1, cumsum)) 
 
-### Figure 3 (pull out window so it is wide and flat, adjusting accordingly)
+### Figure 3 (NOTE: use same-sized window as for Figure 2, see windows defintion above)
 par(mar=c(4,1,2,1), mgp=c(2,0.7,0), font.lab=2, cex.lab=0.9, las=1)
-plot(0,0,xlab="Percentage (%)",ylab="",xlim=c(-3,100),ylim=c(-35,366), yaxt="n", bty="n", main="Bronze data (5 trace elements as subcomposition)", type="n")
+plot(0,0,xlab="Percentage (%)",ylab="",xlim=c(-3,100),ylim=c(-40,nrow(bronze.pro)+3*35), yaxt="n", bty="n", main="Bronze data (5 trace elements as subcomposition)", type="n")
 nlines <- nrow(bronze)+2
-i.extra <- 0
+i.extra <- 15
+i.skip  <- 5
 ii <- 1
+foo <- cumsum(c(0,100*colMeans(bronze.sub.pro[,element.sub.order])))
 for(igp in 1:3) {
+  ii <- ii+i.extra/2 + i.skip
+  foo <- cumsum(c(0,100*colMeans(bronze.sub.pro[group.num==igp,element.sub.order])))
+  for(j in 1:ncol(bronze)) segments(foo[j], ii, foo[j+1], ii, col=element.col[j],lwd=8, lend=1)
+  text(0,ii, labels="Average", cex=0.7, font=4, col=group.col[c(2,1,3)[igp]], pos=2)
+  ii <- ii + i.extra
   for(i in group.ends[igp,1]:group.ends[igp,2]) {
     foo <- 100*bronze.sub.pro.cum[i,]
-    for(j in 1:5) segments(foo[j], ii, foo[j+1], ii, col=element.col[j],lwd=3,lend=1)
+    for(j in 1:ncol(bronze)) segments(foo[j], ii, foo[j+1], ii, col=element.col[j],lwd=3,lend=1)
     ii <- ii+1
   }
-  i.extra <- i.extra+1
-  if(igp!=3) segments(0, ii+i.extra, 100, ii+i.extra, col="white",lwd=5, lend=1)
-  ii <- ii+i.extra+1
+  ii <- ii + i.skip
 }
-
+text(c(0,0,0),c(92,269,440) , labels=group.names, col=group.col[c(2,1,3)],pos=2, font=2, cex=0.8)
 foo <- cumsum(c(0,100*colMeans(bronze.sub.pro[,element.sub.order])))
-for(j in 1:1:6) segments(foo[j], -15, foo[j+1], -15, col=element.col[j],lwd=8, lend=1)
-text(c(0,0,0,0,0),c(55,181,318) , labels=group.names, col=group.col[c(2,1,3)],pos=2, font=2, cex=0.8)
-text(0, -15, labels="Average", cex=0.8, font=3, pos=2)
+for(j in 1:6) segments(foo[j], -15, foo[j+1], -15, col=element.col[j],lwd=8, lend=1)
+text(0, -15, labels="Average", cex=0.7, font=4, pos=2)
+text(0, -35, labels="(all)    ", cex=0.7, font=3, pos=2)
 ### just label bottom 5 elements
 labels.mid <- foo[1:6] + (foo[2:7] - foo[1:6])/2
-text(labels.mid, -30, labels=colnames(bronze.sub.pro)[element.sub.order], col=element.col[1:5], cex=0.8, font=4)
+text(labels.mid, -36, labels=colnames(bronze.sub.pro)[element.sub.order], col=element.col[1:5], cex=0.8, font=4)
 
 
 ### ---------------------------------
@@ -250,7 +265,7 @@ percs   <- 100 * bronze.LRA$sv^2 / sum(bronze.LRA$sv^2)
 sum(bronze.LRA$sv^2)
 # [1] 0.8020681       # agrees with total variance computed before in different ways
 ### Plot Figure 5 "by hand"
-par(mar=c(3.8,3.6,2.5,1), mgp=c(2,0.7,0), font.lab=2, cex.axis=0.7)
+par(mar=c(3.8,3.6,2.5,1), mgp=c(2,0.7,0), font.lab=2, cex.axis=0.7, mfrow=c(1,1))
 plot(1.05 * rbind(bronze.rpc, bronze.csc), type = "n", asp = 1,
      xlab = paste("LRA dimension ", 1, " (", round(percs[1], 1), "%)", sep = ""), 
      ylab = paste("LRA dimension ", 2, " (", round(percs[2], 1), "%)", sep = ""),
@@ -314,23 +329,25 @@ bronze.kmeans6$size
 # [1]  38  14  61  61 120  68
 
 ### Table 2
-table(bronze.kmeans6$cluster, BRONZE$GROUP2)
-#     Eastern Zhou Shang Western Zhou
-#   1            2     6           30
-#   2            3     9            2
-#   3           16    18           27
-#   4            3    11           47
-#   5           67    16           37
-#   6            5    49           14
+table(bronze.kmeans6$cluster, BRONZE$GROUP2)[,c(2,3,1)]
+#     Shang Western Zhou Eastern Zhou
+#   1     6           30            2
+#   2     9            2            3
+#   3    18           27           16
+#   4    11           47            3
+#   5    16           37           67
+#   6    49           14            5
 
-colSums(table(bronze.kmeans6$cluster, BRONZE$GROUP2))
-# Eastern Zhou        Shang Western Zhou 
-#           96          109          157
+
+colSums(table(bronze.kmeans6$cluster, BRONZE$GROUP2))[c(2,3,1)]
+#       Shang Western Zhou Eastern Zhou 
+#         109          157           96 
+
 # correct assignments in the clusters (majority wins in each)
-# 67/96 = 69.8% (EZhou)  58/109 = 53.2% (Shang)  104/157 = 66.2% (WZhou)	    
+# 58/109 = 53.2% (Shang)   104/157 = 66.2% (WZhou)   67/96 = 69.8% (EZhou) 	    
 
 ### Sum of maximum cluster assignments
-(67+58+104)/362 
+(58+104+67)/362 
 # [1] 0.6325967
 
 ### In order to see which samples are in which clusters, use the cluster number
@@ -497,9 +514,9 @@ chrono <- BRONZE[,2]
 chrono.STEPR <- STEPR(bronze.pro, chrono, method=1)
 # [1] "Criterion increases when 3-th ratio enters"
 chrono.STEPR$ratios
-      row col
-Cu/Sb   1   8
-Zn/Au   4   5
+#       row col
+# Cu/Sb   1   8
+# Zn/Au   4   5
 
 ### linear model with two predictors
 chrono.lm <- lm(chrono ~ ., data=as.data.frame(chrono.STEPR$logratios))
@@ -771,7 +788,7 @@ bronze.ratios <- as.data.frame(exp(LR(bronze.pro, weight=FALSE)$LR))
 bronze.ctree <- rpart(factor(bronze.short) ~ ., data=bronze.ratios)
 par(mar=c(.1,.1,.1,.1))
 require(rpart.plot)
-rpart.plot(bronze.ctree, cex=0.7, font=2, extra=104)#, box.palette=gp2.col[c(2,3,1)])
+# rpart.plot(bronze.ctree, cex=0.7, font=2, extra=104)#, box.palette=gp2.col[c(2,3,1)])
 prp(bronze.ctree, extra=1) 
 
 ### Predictions of the groups
@@ -789,9 +806,9 @@ sum(diag(table(bronze.ctree.pred, BRONZE[,4])))/nrow(bronze)
 # [1] 0.7762431
 
 # correct predictions in each group
-apply(table(bronze.ctree.pred, bronze.short),2,max)/colSums(table(bronze.ctree.pred, bronze.short))
-#        EZ         S        WZ 
-# 0.7187500 0.7247706 0.8471338 
+(apply(table(bronze.ctree.pred, bronze.short),2,max)/colSums(table(bronze.ctree.pred, bronze.short)))[c(2,3,1)]
+#         S        WZ        EZ 
+# 0.7247706 0.8471338 0.7187500 
 # (e.g., for EZ: 69/96 = 0.71875)
 
 ### ---------------------------------------------------------------------------
@@ -995,22 +1012,25 @@ bronze.rf <- randomForest(x=train.x,
 bronze.rf
 # No. of variables tried at each split: 5
 # 
-#         OOB estimate of  error rate: 25.21%
+#     OOB estimate of  error rate: 25.21%
 # Confusion matrix:
 #    EZ  S WZ class.error
 # EZ 47  4 13   0.2656250
 # S   6 47 20   0.3561644
 # WZ  8 10 87   0.1714286
-#                 Test set error rate: 21.67%
+(47+47+87)/242
+# [1] 0.7479339
+#     Test set error rate: 21.67%
 # Confusion matrix:
 #    EZ  S WZ class.error
 # EZ 24  5  3   0.2500000
 # S   2 26  8   0.2777778
 # WZ  3  5 44   0.1538462
-
+(24+26+44)/120
+# [1] 0.7833333
 # in the above "true" dynasties are the rows, predictions in columns
 # also note that the values have to be re-ordered to obtain Table 8
-# the tranposed and re-ordered tables can be obtained as follows:
+# the transposed and re-ordered tables can be obtained as follows:
 
 # our OOB confusion matrix, transposed version of above result in bronze$rf
 table(bronze.rf$predicted, train.y)[c(2,3,1), c(2,3,1)]
