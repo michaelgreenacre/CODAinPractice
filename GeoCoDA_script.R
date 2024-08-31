@@ -281,7 +281,7 @@ stars(temp, labels=geolunits, draw.segments=TRUE, key.loc=c(5,2), axes=FALSE,
 
 ### Amalgamations
 colnames(kim)
- [1] "Si" "Ti" "Al" "Fe" "Mg" "Ca" "Na" "K"  "P"  "Rb" "Nb" "Zr" "Th" "V"  "Cr" "Co" "Ni" "La" "Er" "Yb" "Y"  "Ga"
+# [1] "Si" "Ti" "Al" "Fe" "Mg" "Ca" "Na" "K"  "P"  "Rb" "Nb" "Zr" "Th" "V"  "Cr" "Co" "Ni" "La" "Er" "Yb" "Y"  "Ga"
 # Mantle Contamination -- Si+Mg+Fe+Cr+Co+Ni+Ti
 # Crustal Contamination -- Al+Rb+Na+K+Ga
 # Kimberlite Fractionation - Nb+La+Th+Zr+P+Er+Yb
@@ -604,7 +604,7 @@ require(easyCODA)
 ### method 1, any logratio can enter
 eJF.STEPR <- STEPR(kim, as.factor(eJF), method=1, family="binomial")
 eJF.STEPR$names
-[1] "Mg/La" "Mg/V" 
+# [1] "Mg/La" "Mg/V" 
 # (note: if you get "Mg/La" "V/La", this is equivalent to the above,
 #  there is a tie between "Mg/V" and "V/La" so the solution is the same,
 #  i.e., identical log-contrast) 
@@ -823,22 +823,22 @@ which(multlogit == min(multlogit))
 #  88 
 step4 <- multinom(factor(kim270$StratUnit) ~ kim.LR$LR[,"Si/Zr"]+kim.LR$LR[,"P/Rb"]+kim.LR$LR[,"Si/Ni"]+kim.LR$LR[,"Mg/Cr"])
 summary(step4)
-Coefficients:
-      (Intercept) kim.LR$LR[, "Si/Zr"] kim.LR$LR[, "P/Rb"] kim.LR$LR[, "Si/Ni"] kim.LR$LR[, "Mg/Cr"]
-eJF    -348.20474            40.166364          -0.4104366            -10.51273            13.006976
-lJF     -85.16834             8.851836          -3.5485629             16.26679           -10.740482
-mJF    -204.86144            17.358544          -4.4333070             10.28428             5.229471
-Pense  -146.04069            25.380807           5.3624595            -22.98457             5.091146
-
-Std. Errors:
-      (Intercept) kim.LR$LR[, "Si/Zr"] kim.LR$LR[, "P/Rb"] kim.LR$LR[, "Si/Ni"] kim.LR$LR[, "Mg/Cr"]
-eJF      71.53365             8.139722            1.847785             8.250520             6.652180
-lJF      52.49849             5.960789            1.793604             8.280532             7.673767
-mJF      60.82092             6.494835            1.762123             7.712160             7.679369
-Pense    61.84604             7.927122            1.813085             7.938223             5.923046
-
-Residual Deviance: 90.83202   # 90.832++8.166*16 = 221.488
-AIC: 130.832 
+# Coefficients:
+#       (Intercept) kim.LR$LR[, "Si/Zr"] kim.LR$LR[, "P/Rb"] kim.LR$LR[, "Si/Ni"] kim.LR$LR[, "Mg/Cr"]
+# eJF    -348.20474            40.166364          -0.4104366            -10.51273            13.006976
+# lJF     -85.16834             8.851836          -3.5485629             16.26679           -10.740482
+# mJF    -204.86144            17.358544          -4.4333070             10.28428             5.229471
+# Pense  -146.04069            25.380807           5.3624595            -22.98457             5.091146
+# 
+# Std. Errors:
+#       (Intercept) kim.LR$LR[, "Si/Zr"] kim.LR$LR[, "P/Rb"] kim.LR$LR[, "Si/Ni"] kim.LR$LR[, "Mg/Cr"]
+# eJF      71.53365             8.139722            1.847785             8.250520             6.652180
+# lJF      52.49849             5.960789            1.793604             8.280532             7.673767
+# mJF      60.82092             6.494835            1.762123             7.712160             7.679369
+# Pense    61.84604             7.927122            1.813085             7.938223             5.923046
+# 
+# Residual Deviance: 90.83202   # 90.832++8.166*16 = 221.488
+# AIC: 130.832 
 ### Bonferroni computation, using chi-square value of 9.23
 ### (see Coenders & Greenacre (2022)
 130.83 - 2*20 + 9.23*20
@@ -847,22 +847,22 @@ AIC: 130.832
 ### hence, stop after three terms since Bonferroni is increasing at 4th step
 
 summary(step3)
-Coefficients:
-      (Intercept) kim.LR$LR[, "Si/Zr"] kim.LR$LR[, "P/Rb"] kim.LR$LR[, "Si/Ni"]
-eJF    -270.95534            38.865838          -0.2607031            -9.539437
-lJF     -55.29997             3.733136          -4.2146014             8.738966
-mJF    -132.33121            14.988885          -4.3254225             5.991670
-Pense  -108.36150            23.223598           4.9639302           -21.049631
-
-Std. Errors:
-      (Intercept) kim.LR$LR[, "Si/Zr"] kim.LR$LR[, "P/Rb"] kim.LR$LR[, "Si/Ni"]
-eJF      60.46482             6.969529            1.681542             6.889565
-lJF      46.60317             3.742451            1.671015             5.965183
-mJF      50.38389             4.401147            1.617929             5.837064
-Pense    51.68934             6.562230            1.706403             7.256361
-
-Residual Deviance: 116.5424 
-AIC: 148.5424 
+# Coefficients:
+#       (Intercept) kim.LR$LR[, "Si/Zr"] kim.LR$LR[, "P/Rb"] kim.LR$LR[, "Si/Ni"]
+# eJF    -270.95534            38.865838          -0.2607031            -9.539437
+# lJF     -55.29997             3.733136          -4.2146014             8.738966
+# mJF    -132.33121            14.988885          -4.3254225             5.991670
+# Pense  -108.36150            23.223598           4.9639302           -21.049631
+# 
+# Std. Errors:
+#       (Intercept) kim.LR$LR[, "Si/Zr"] kim.LR$LR[, "P/Rb"] kim.LR$LR[, "Si/Ni"]
+# eJF      60.46482             6.969529            1.681542             6.889565
+# lJF      46.60317             3.742451            1.671015             5.965183
+# mJF      50.38389             4.401147            1.617929             5.837064
+# Pense    51.68934             6.562230            1.706403             7.256361
+# 
+# Residual Deviance: 116.5424 
+# AIC: 148.5424 
 	
 
 ### -----------------------------------------------------------------
