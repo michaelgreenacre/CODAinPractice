@@ -1,8 +1,9 @@
 ### This script was run using R version 4.4.1 and easyCODA version 0.40.1
 ### There might be small differences where random numbers are generated
-### packages required
+### The following ackages are required
 require(RColorBrewer)
 require(easyCODA)
+require(vegan)
 require(boot)
 require(ellipse)
 require(rpart)
