@@ -111,7 +111,7 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 
 **Coenders&Greenacre_CODE.R**: R code for analysis of Crohn data (Crohn data available in R package selbal, as shown in code)
 
-**STEPR.R**: function for stepwise selection of logratios for GLM models (this function is in the pre-release of easyCODA on RForge)
+**STEPR.R**: function for stepwise selection of logratios for GLM models
 
   \
 **ARTICLE:** ***"Aitchison's Compositional Data Analysis 40 Years On: A Reappraisal"***, by Michael Greenacre, Eric Grunsky, John Bacon-Shone, Ionas Erb and Thomas Quinn (2022). There are two versions: the original Version 1, and the new revised Version 2
