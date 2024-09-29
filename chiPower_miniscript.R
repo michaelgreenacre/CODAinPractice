@@ -92,7 +92,7 @@ Crohn0.comp <- CLOSE(x_Crohn0)
 for(power in 1:npower) {
   foo.chiPower <- chiPower(Crohn0.comp, power=power/npower)
   foo.dist     <- dist(foo.chiPower)
-  foo.rpc      <- PCA(foo.chiPower, weight=FALSE)$rowpcoord[,1:(ncol(Crohn.comp)-1)]
+  foo.rpc      <- PCA(foo.chiPower, weight=FALSE)$rowpcoord[,1:(ncol(Crohn0.comp)-1)]
   Crohn.cor[power] <- cor(Crohn.clr.dist, foo.dist, method="spearman")
   Crohn.pro[power] <- protest(Crohn.lra.rpc, foo.rpc, permutations=0)$t0
 }
