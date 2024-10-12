@@ -11,6 +11,8 @@ require(ellipse)
 require(rpart)
 require(nnet)	
 require(easyCODA)
+require(vegan)
+
 ### (note that if functions STEPR() and FINDR() are not found, they are available on the GitHub site
 ###  for copying and pasting into your session)
 
@@ -28,7 +30,7 @@ colnames(kim270)
 ### and the rows sum to 100%
 ### The column "StratUnit" contains the names of the 5 phases
 
-### The elements in decreasing order of average percetnage
+### The elements in decreasing order of average percentage
 order.kim <- order(colMeans(kim270[,3:24]), decreasing=TRUE)
 round(colMeans(kim270[,3:24])[order.kim], 4)
 #      Si      Mg      Fe      Ca      Al      Ti       P      Na       K      Ni      Cr 
@@ -526,7 +528,7 @@ CIplot_biv(kim.rpc[,1], kim.rpc[,2], group=kim.su, groupcols=kim.su.col,
 ### Principal component analysis (PCA) of ALRs w.r.t. Zr
 ### First identify Zr as being the best reference element
 ### (closest to isometric) for an additive logratio transform
-### If function FINDR() is not detected, it is available on the GitHub site
+### If function FINDALR() is not detected, it is available on the GitHub site
 ###  for copying and pasting into your session.
 FINDALR(kim, weight=FALSE)
 # $totvar
@@ -628,6 +630,7 @@ table(eJF.MgLa.MgV.pred>0, factor(eJF))
 eJF.STEPR2 <- STEPR(kim, as.factor(eJF), method=2, family="binomial")
 eJF.STEPR2$names
 # [1] "Mg/La" "V/Ni" 
+# (note: if you get Ni/V, the solution is the same)
 eJF.STEPR2$Bonferroni
 # [1] 117.3022 100.5510 102.0931
 eJF.MgLa.NiV <- glm(factor(eJF) ~ kim.LR$LR[,"Mg/La"] + kim.LR$LR[,"V/Ni"], family="binomial")
@@ -678,7 +681,7 @@ legend("bottomright", legend=c("eJF phase","other phases"), bty="n",
 ### -----------------------------------------------------------------------------------------
 ### Plot of second pair of logratios, with contours of prediction function (all untransformed)
 ### (notice that the inverse of V/Ni is used to obtain Ni/V that has a positive coefficient --
-### see the logistic regression resujlts above)
+### see the logistic regression results above)
 ### Figure 12
 par(mar=c(4.2,4,1,1), mgp=c(2,0.7,0), font.lab=2, cex.axis=0.8, mfrow=c(1,1))
 plot(exp(kim.LR$LR[,"Mg/La"]),exp(-kim.LR$LR[,"V/Ni"]), type="n", xlab="Mg/La", ylab="Ni/V")
@@ -721,7 +724,7 @@ table(eJF.pred01, eJF)
 (111+152)/270
 # [1] 0.9740741
 ### 10-fold cross-validation; notice that luckily 270 divides exactly by 10
-set.seed(123)
+set.seed(1234567)
 groups10 <- rep(1:10, each=27)
 groups10 <- groups10[sample(1:270)]
 cvpreds <- rep(0, nrow(kim))
@@ -734,9 +737,9 @@ for(cv in 1:10) {
 }
 table(cvpreds>0.5, factor(eJF))
 #           0   1
-#   FALSE 106   9
-#   TRUE   10 145
-(106+145)/270
+#   FALSE 105   8
+#   TRUE   11 146
+(105+146)/270
 # [1] 0.9296296
 
 ### ----------------------------------------------------------
@@ -786,8 +789,8 @@ summary(step2)
 174.704 - 2*12 + 9.23*12
 # [1] 261.464
 sum(diag(table(predict(step2), kim270$StratUnit)))/270
-table(predict(step2), kim270$StratUnit)[kim.su.order,kim.su.order]
 # [1] 0.8962963
+table(predict(step2), kim270$StratUnit)[kim.su.order,kim.su.order]
 
 ### Step3 of multinomial logit
 ### Put best two logratios in model and find second best amongst the remaining ones
@@ -891,7 +894,7 @@ sum(diag(table(kim.phase.pred, kim270$StratUnit)))/nrow(kim)
 # [1] 0.9481481
 
 ### cross-validation
-set.seed(123)
+set.seed(1234567)
 groups10 <- rep(1:10, each=27)
 groups10 <- groups10[sample(1:270)]
 cvpreds <- matrix(0, nrow(kim), 5)
@@ -906,14 +909,14 @@ cv.pred.phase <-rep(0, nrow(kim))
 for(i in 1:nrow(kim)) cv.pred.phase[i] <- which(cvpreds[i,] == max(cvpreds[i,]))
 table(cv.pred.phase, kim270$StratUnit)[kim.su.order,kim.su.order]
 # cv.pred.phase Cantuar Pense eJF mJF lJF
-#             1      19     2   0   1   0
-#             5       2    15   0   1   1
-#             2       0     6 146   3   2
-#             4       0     2   8  31   3
-#             3       0     2   0   4  22
+#             1      16     3   1   0   1
+#             5       4    16   3   0   0
+#             2       0     6 144   4   1
+#             4       0     1   6  34   2
+#             3       1     1   0   2  24
 sum(diag(table(cv.pred.phase, kim270$StratUnit)))/nrow(kim)
-# 37 mispredictions, 233 correct ones 
-# [1] 0.862963
+# 36 mispredictions, 234 correct ones 
+# [1] 0.8666667
 
 
 
