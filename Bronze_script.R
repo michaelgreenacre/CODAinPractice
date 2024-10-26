@@ -1,9 +1,8 @@
 ### This script was run using R version 4.4.1 and easyCODA version 0.40.1
 ### There might be small differences where random numbers are generated
-### The following ackages are required
+### packages required
 require(RColorBrewer)
 require(easyCODA)
-require(vegan)
 require(boot)
 require(ellipse)
 require(rpart)
@@ -11,6 +10,7 @@ require(rpart.plot)
 require(nnet)
 require(splitstackshape)
 require(randomForest)
+require(vegan)
 
 ### read data from all three dynasties
 BRONZE <- read.csv("Bronze.csv", header=TRUE)
@@ -292,6 +292,13 @@ CIplot_biv(bronze.rpc[,1], bronze.rpc[,2], group=group.num, groupcols=group.col,
 set.seed(123)
 CIplot_biv(bronze.rpc[,1], bronze.rpc[,2], group=group.num, groupcols=group.col, 
            alpha=0.99, add=TRUE, shade=FALSE, groupnames=c("S","WZ","EZ"))
+
+### test of PLOTnew -----------------------------------------------------------------
+PLOTnew(bronze.ALR.PCA, main="Logratio Analysis", map="asymmetric",axes.inv=c(-1,1), what=c("all","all"),
+        group=group.num, groupcols=group.col, grouppchs=group.pch, arrowcol="transparent",
+        groupnames=c("S","WZ","EZ"), hull=TRUE, ellipse=TRUE, rescale=1.5,
+        legendpos="bottomleft", legendnames=c("S:Shang","WZ:WZhou","EZ:EZhou"))
+### ---------------------------------------------------------------------------------
 
 
 ### ------------------------------------------------------------
