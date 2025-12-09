@@ -149,3 +149,5 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
   **ARTICLE:** ***"Omics data are compositional but transformations are optional: the analysis in relative abundances permits zeros and it is almost subcompositionally coherent"***, by Marina Martinez Alvaro, Michael Greenacre and Agustin Blasco (2025). 
 
 **SUBCO.R**: functions CONCORD() and SUBCO() for measuring subcompositional coherence
+
+For **chiPower()** function, see **chiPower_miniscript.R**
