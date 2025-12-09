@@ -139,4 +139,13 @@ PLEASE REPORT ANY BUGS OR DIFFICULTIES WITH THE PACKAGE TO Michael Greenacre at 
 **Bronze.csv**: dataset of Chinese ritual bronzes
 
 **Bronze_script.R**: script for reproducing the workflow
- 
+
+  \
+  **ARTICLE:** ***"Amalgamations in a hierarchy as a way of variable selection in compositional data analysis"***, by Michael Greenacre and Martin Graeve (2025). 
+
+**FattyAcids.txt**: dataset of fatty acid data
+
+ \
+  **ARTICLE:** ***"Omics data are compositional but transformations are optional: the analysis in relative abundances permits zeros and it is almost subcompositionally coherent"***, by Marina Martinez Alvaro, Michael Greenacre and Agustin Blasco (2025). 
+
+**SUBCO.R**: functions CONCORD() and SUBCO() for measuring subcompositional coherence
